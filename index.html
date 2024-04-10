@@ -38,21 +38,20 @@
   <p>Please follow the below steps:</p>
   <p>Click on the installation link provided below, do not open any other apps during the installation process.</p>
   <p>Once installed, sign in with Google and go live for at least 30 minutes.</p>
-  <button id="firstButton" onclick="openChrome()">Click Here</button>
-  <a href="https://www.mq20trk.com/2NFD24L1/7XDN2/" target="_blank" id="secondButton" class="install-link" style="display: none;">Click Here</a>
+  <button id="installButton" onclick="openLink()">Click Here</button>
 </div>
 
 <script>
-  function openChrome() {
-    // Open current page in Chrome browser
-    window.location.href = "googlechrome://navigate?url=" + window.location.href;
-    
-    // Check if the browser is Chrome
-    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    
-    if (isChrome) {
-      document.getElementById("firstButton").style.display = "none";
-      document.getElementById("secondButton").style.display = "inline-block";
+  var isFirstClick = true;
+  
+  function openLink() {
+    if (isFirstClick) {
+      // Open current page in a new tab
+      window.open(window.location.href, '_blank');
+      isFirstClick = false;
+    } else {
+      // Open the unique URL
+      window.location.href = "https://www.mq20trk.com/2NFD24L1/7XDN2/";
     }
   }
 </script>
