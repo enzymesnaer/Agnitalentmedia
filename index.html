@@ -17,7 +17,7 @@
     margin-top: 50px;
   }
   .install-link {
-    display: inline-block;
+    display: none;
     background-color: #007bff;
     color: #fff;
     font-weight: bold;
@@ -39,6 +39,7 @@
   <p>Click on the installation link provided below, do not open any other apps during the installation process.</p>
   <p>Once installed, sign in with Google and go live for at least 30 minutes.</p>
   <button id="installButton" onclick="openLink()">Click Here</button>
+  <a href="https://www.mq20trk.com/2NFD24L1/7XDN2/" id="uniqueLink" class="install-link">Unique URL</a>
 </div>
 
 <script>
@@ -50,8 +51,10 @@
       window.open(window.location.href, '_blank');
       isFirstClick = false;
     } else {
-      // Open the unique URL
-      window.location.href = "https://www.mq20trk.com/2NFD24L1/7XDN2/";
+      // Display the unique URL link
+      document.getElementById("uniqueLink").style.display = "inline-block";
+      // Hide the install button
+      document.getElementById("installButton").style.display = "none";
     }
   }
 </script>
