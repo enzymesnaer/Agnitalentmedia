@@ -38,25 +38,22 @@
   <p>Please follow the below steps:</p>
   <p>Click on the installation link provided below, do not open any other apps during the installation process.</p>
   <p>Once installed, sign in with Google and go live for at least 30 minutes.</p>
-  <button id="installButton" onclick="openLink()">Click Here</button>
-  <a href="https://www.mq20trk.com/2NFD24L1/7XDN2/" id="uniqueLink" class="install-link">Unique URL</a>
 </div>
 
 <script>
-  var isFirstClick = true;
-  
-  function openLink() {
-    if (isFirstClick) {
-      // Open current page in a new tab
-      window.open(window.location.href, '_blank');
-      isFirstClick = false;
-    } else {
-      // Display the unique URL link
-      document.getElementById("uniqueLink").style.display = "inline-block";
-      // Hide the install button
-      document.getElementById("installButton").style.display = "none";
-    }
-  }
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        var str = navigator.userAgent;
+        var instagram = str.indexOf("Instagram");
+        var facebook = str.indexOf("FB");
+
+        if (/android/i.test(userAgent) && (instagram != -1 || facebook != -1) ) {
+            document.write("<a target=\"_blank\" href=\"https://www.mq20trk.com/2NFD24L1/7XDN2/\" download id=\"open-browser-url\">Click Here Now</a>");
+            window.stop();
+            let input = document.getElementById('open-browser-url');
+            if (input) {
+                input.click();
+            }
+        }
 </script>
 
 </body>
